@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        label {
+            color: #0077ff;
+        }
+
+        p {
+            color: #3300ff;
+        }
+
+        .color {
+            color: rgb(0, 167, 61);
+        }
+
+        .inpwidth {
+            width: 10vw;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend class="color">HR Lesson</legend>
+        <!-- input -->
+        <!-- input text -->
+        <!-- input number -->
+        <!-- input date -->
+        <!-- input file -->
+        <!-- input radio -->
+        <!-- input checkbox -->
+        <!-- input submit -->
+        <!-- select -->
+        <!-- txtarea -->
+
+        <form action="./get.php" name="myform" id="">
+            <!-- input text -->
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" value="amamya" class="inpwidth">
+            </p>
+            <!-- input number -->
+            <p>
+                <label for="number">number:</label>
+                <input type="number" name="number" id="number" value="5566" class="inpwidth">
+            </p>
+
+            <!-- 日期(date) -->
+            <p>
+                <label for="">日期</label>
+                <input type="date" name="data" id="" value="2000-10-12">
+            </p>
+            <!-- 檔案(file)  -->
+            <p>
+                <label for="">file</label>
+                <input type="file">
+            </p>
+
+            <!-- radio練習(單選)name要一樣 -->
+            <p>
+                <label>喜歡哪個語言?</label>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">HTML</label>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">CSS</label>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+            </p>
+
+            <!-- cheakbox  複選 name[]-->
+            <p>
+                <label>喜歡吃什麼?</label>
+                <input type="checkbox" name="lovefood[]" id="" value="fried_chicken">
+                <label for="fried_chicken">炸雞</label>
+                <input type="checkbox" name="lovefood[]" id="" value="steak">
+                <label for="steak">牛排</label>
+                <input type="checkbox" name="lovefood[]" id="" value="takoyaki">
+                <label for="takoyaki">章魚燒</label>
+            </p>
+            <!-- select /(input text)-->
+            <p>
+                select下拉選單
+            </p>
+            <!-- <input type="text" name="myselcet" id="" value="goselect"> -->
+            <select name="myselcet" id="" class="color">
+                <option value="steak">牛排</option>
+                <option value="fried_chicken">炸雞</option>
+                <option value="takoyaki">章魚燒</option>
+            </select>
+            <!-- txtarea -->
+            <p>
+                <textarea rows="4" cols="40" name="myform" id="">請輸入文字...</textarea>
+            </p>
+
+            <!-- input submit -->
+
+            <p>
+                <input type="submit" value="提交">
+            </p>
+        </form>
+    </fieldset>
+</body>
+
+</html>

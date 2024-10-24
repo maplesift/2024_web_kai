@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css table</title>
+    <style>
+        table{
+            background-color:rgb(219, 234, 249);
+            width: 100%;
+            /* vh 高度 viewpoint height  好處:視窗縮放可等比縮放 */
+            height: 90vh;
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 2px solid black;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- table row -->
+        <tr>
+            <!-- table data/ table column -->
+             <!-- colspan -->
+             <!-- rowspan -->
+            <td colspan="2">
+                1
+            </td>
+            <!-- <td>
+                2
+            </td> -->
+            <td>
+                3
+            </td>
+        </tr>
+        <tr>
+            <td>
+                4   
+            </td>
+            <td>
+                5   
+            </td>
+            <td rowspan="2">
+                6
+            </td>
+        </tr>
+        <tr>
+            <td>
+                7
+            </td>
+            <td>
+                8
+            </td>
+            <!-- <td>
+                9
+            </td> -->
+        </tr>
+    </table>
+</body>
+</html>

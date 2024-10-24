@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        label {
+            color: #0077ff;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="./get.php">
+        <label for="name">
+            Name:
+        </label>
+        <input type="text" name="name" id="name"><br><br>
+
+
+        <!-- radio練習 -->
+        <label>喜歡哪個語言?</label> <br>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label><br><br>
+
+        <!-- cheakbox -->
+        <label>喜歡吃什麼?</label><br>
+        <label for="fried_chicken">炸雞</label>
+        <input type="checkbox" name="fried_chicken" id="fried_chicken"><br>
+        <label for="steak">牛排</label>
+        <input type="checkbox" name="steak" id="steak"><br>
+        <label for="takoyaki">章魚燒</label>
+        <input type="checkbox" name="takoyaki" id="takoyaki"><br><br>
+        <!-- 日期(date) -->
+        <label for="">日期</label><br>
+        <input type="date" name="data" id=""><br><br>
+        <!-- 提交 -->
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>
