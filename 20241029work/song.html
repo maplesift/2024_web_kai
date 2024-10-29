@@ -4,23 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作業:歌曲</title>
+    <title>song</title>
     <link rel="icon" href="../test.ico" sizes="32x32" type="image/png">
     <link rel="icon" href="../test.ico" sizes="16x16" type="image/png">
+
     <style>
-        table {
+        body {
             background-color: rgb(218, 232, 245);
-            width: 50%;
-            height: 50vh;
+        }
+
+        table {
+            width: 80%;
             border-collapse: collapse;
             text-align: center;
             margin: auto;
-            border-radius: 10px;
-            border: 2px solid black;
         }
 
-        .background-color1 {
-            background-color: rgb(218, 232, 245);
+        tr,
+        td {
+            /* border: 1px solid black; */
+            height: 50vh;
+            font-weight: bolder;
+        }
+
+        iframe,
+        img {
+            width: 70%;
+            height: 60vh;
+        }
+
+        .my-left {
+            text-align: left;
+        }
+
+        .text2 {
+            color: #737373;
+            font-size: 12px;
+        }
+
+        .text1 {
+            /* color: lightblue; */
+            font-size: 30px;
+        }
+
+        .my-title {
+            text-align: center;
+            font-size: 12px;
+
         }
 
         .textcolor1 {
@@ -36,95 +66,73 @@
             /* 文字顏色透明 */
         }
 
-        td,
-        th {
-            font-size: 22px;
-            font-weight: bold;
+        .input_submit {
+            color: #000000;
+            /* 字體顏色 */
+            font-weight: bolder;
+            /* 字體加粗 */
+            background-color: rgba(59, 246, 59, 0.767);
+            /* 背景顏色設為綠色 */
+            border: none;
+            /* 去掉邊框 */
+            padding: 10px 15px;
+            /* 調整內邊距，讓按鈕更大 */
+            border-radius: 5px;
+            /* 可選，增加圓角效果 */
+            cursor: pointer;
+            /* 鼠標懸停時顯示手型 */
+            transition: 0.6s;
         }
 
-        .image-container {
-            width: 100%;
-            /* 讓容器填滿 */
-            height: 100%;
-            /* 讓容器填滿 */
-            display: flex;
-            /* 使用 flexbox */
-            justify-content: center;
-            /* 水平置中 */
-            align-items: center;
-            /* 垂直置中 */
-            overflow: hidden;
-            /* 隱藏溢出部分 */
-        }
-
-        img {
-            max-width: 100%;
-            /* 最大寬度為容器的 100% */
-            height: auto;
-            /* 自動高度 */
-            object-fit: cover;
-            /* 讓圖片保持比例 */
+        .input_submit:hover {
+            background-color: rgb(218, 232, 245);
+            color: rgb(1, 117, 200);
+            /* 懸停時變深綠色 */
         }
     </style>
-    <!-- <style>
-        table {
-            background-color: rgb(218, 232, 245);
-            width: 60%;
-            /* vh 高度 viewpoint height  好處:視窗縮放可等比縮放 */
-            height: 50vh;
-            border-collapse: collapse;
-            /* 文字置中 */
-            text-align: center;
-            /* 表格置中 */
-            margin: auto;
-        }
-
-        td,
-        th {
-            border: 2px solid black;
-            font-size: 22px;
-
-            font-weight: bold;
-        }
-    </style> -->
 </head>
 
 <body>
+
+    <div class="my-title">
+        <h1 class="textgradient">
+            失恋ソング沢山聴いて 泣いてばかりの私はもう。
+        </h1>
+        作詞/作曲:<span class="textgradient">りりあ</span>
+    </div>
+    <br>
     <table>
         <tr>
-            <td class="textgradient">
-                失恋ソング沢山聴いて 泣いてばかりの私はもう。
-            </td>
-
-
             <td>
-                作詞/作曲:<span class="textgradient">りりあ</span>
-            </td>
-            <td>
-                123
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <div class="image-container">
-                    <img src="./images/mark.jpg" alt="">
-                </div>
-            </td>
-        </tr>
-        <!-- <tr>
-            <td colspan="2">
-                <div style="width: 800px; height: 537px; overflow: hidden; text-align: center;">
-                    <img src="./images/mark.jpg" alt="" style="max-width: 100%; height: auto; object-fit: cover; display: block; ">
-                </div>
-            </td>
-        </tr> -->
-
-        <tr>
-            <td colspan="2">
-                <iframe width="750px" height="500px" src="https://www.youtube.com/embed/K56GTQ9PxN4?si=_lGpiYuBJF-fabEv"
-                    title="YouTube video player" frameborder="0"
+                <img src="./mark.jpg" alt="">
+                <iframe src="https://www.youtube.com/embed/K56GTQ9PxN4?si=_lGpiYuBJF-fabEv" title="YouTube video player"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </td>
+            <td>
+                <div class="text2 my-left">
+                    目標 NTD$1,500,000
+                </div>
+
+                <div class="text1 my-left">
+                    25,930,099
+                </div>
+
+
+                <div class="text2 my-left">
+                    贊助人次
+                </div>
+
+                <div class="text1 my-left">
+                    7667
+                </div>
+
+                <div class="text2 my-left">
+                    <form action="./donate.html">
+                        <input class="input_submit" type="submit" value="贊助頁面">
+                    </form>
+                </div>
             </td>
         </tr>
         <tr>
@@ -177,7 +185,8 @@
                 <br>
                 <div class="textcolor1">
                     聽無數首失戀歌<br>
-                    盡是哭泣的我已經想拋棄了<br>
+                    盡是哭泣的我<br>
+                    已經想拋棄了<br>
                     不想再逞強下去<br>
                     想變得坦率<br>
                 </div>
@@ -304,6 +313,7 @@
             </td>
         </tr>
     </table>
+
 </body>
 
 </html>
