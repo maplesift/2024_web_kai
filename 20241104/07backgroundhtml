@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boxsizing</title>
+</head>
+<style>
+    .box {
+        /* 插入背景圖片 */
+        background-image: url(./bg.png);
+        width: 139px;
+        height: 410px;
+        background-color: aqua;
+        font-size: 30px;
+        /* 背景圖片位置 :right bottom top left center 跟輸入參數 */
+        background-position: center;
+        /* background-position: 0 0; */
+    }
+</style>
+
+<body>
+    <!-- img -->
+    <h3>img圖片</h3>
+    <img src="./bg.png" alt="">
+    <hr>
+    <h3>背景圖片</h3>
+    <div class="box"></div>
+</body>
+
+</html>
