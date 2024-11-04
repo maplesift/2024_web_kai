@@ -14,6 +14,11 @@
         font-size: 30px;
     }
 
+    /* ✨ 不設box-sizing: border-box;  的情況 
+寬高會是content-box(原內容假設寬高300px)+padding+border+margin的總和 會超過300px
+✨ 設box-sizing: border-box;  則會讓
+content-box+padding+border+margin=300px */
+
     .box1 {
         background-color: rgb(255, 145, 145);
         box-sizing: content-box;
