@@ -7,15 +7,81 @@
     <title>boxsizing</title>
 </head>
 <style>
+    * {
+        box-sizing: border-box;
+        /* 超出的部分隱藏 */
+        overflow: hidden;
+    }
+
     .box {
         /* 插入背景圖片 */
         background-image: url(./bg.png);
         width: 139px;
-        height: 410px;
+        height: 210px;
         background-color: aqua;
-        font-size: 30px;
         /* 背景圖片位置 :right bottom top left center 跟輸入參數 */
-        background-position: center;
+        background-position: center top;
+        /* background-position: 0 0; */
+    }
+
+    .box-img {
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+    }
+
+    .box2 {
+        /* 插入背景圖片 */
+        background-image: url(./bg.png);
+        width: 148px;
+        height: 210px;
+        background-color: aqua;
+        /* 背景圖片位置 :right bottom top left center 跟輸入參數 */
+        background-position: right top;
+        /* background-position: 0 0; */
+    }
+
+    .box3 {
+        /* 插入背景圖片 */
+        background-image: url(./bg.png);
+        width: 146px;
+        height: 210px;
+        background-color: aqua;
+        /* 背景圖片位置 :right bottom top left center 跟輸入參數 */
+        background-position: left top;
+        /* background-position: 0 0; */
+    }
+
+    .box4 {
+        /* 插入背景圖片 */
+        background-image: url(./bg.png);
+        width: 140px;
+        height: 210px;
+        background-color: aqua;
+        /* 背景圖片位置 :right bottom top left center 跟輸入參數 */
+        background-position: center bottom;
+        /* background-position: 0 0; */
+    }
+
+    .box5 {
+        /* 插入背景圖片 */
+        background-image: url(./bg.png);
+        width: 146px;
+        height: 211px;
+        background-color: aqua;
+        /* 背景圖片位置 :right bottom top left center 跟輸入參數 */
+        background-position: left bottom;
+        /* background-position: 0 0; */
+    }
+
+    .box6 {
+        /* 插入背景圖片 */
+        background-image: url(./bg.png);
+        width: 152px;
+        height: 210px;
+        background-color: aqua;
+        /* 背景圖片位置 :right bottom top left center 跟輸入參數 */
+        background-position: right bottom;
         /* background-position: 0 0; */
     }
 </style>
@@ -27,6 +93,16 @@
     <hr>
     <h3>背景圖片</h3>
     <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    <!-- box img -->
+    <h3>box img</h3>
+    <div class="box-img">
+        <img src="./bg.png" alt="">
+    </div>
 </body>
 
 </html>
