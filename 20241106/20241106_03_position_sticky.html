@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../test.ico" sizes="32x32" type="image/png">
+    <title>sticky</title>
+</head>
+
+<body>
+    <div class="sticky">
+        sticky
+    </div>
+    <br>
+    <div class="box">
+
+    </div>
+    <div style="padding-bottom: 2000px;">
+
+    </div>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+
+        .sticky {
+            /* 黏: 視窗往下滑也總是出現在視窗內 */
+            width: 300px;
+            height: 300px;
+            position: sticky;
+            top: 10px;
+            right: 10px;
+            padding: 5px;
+            background-color: #cae8ca;
+            border: 2px solid #4CAF50;
+        }
+    </style>
+</body>
+
+</html>
