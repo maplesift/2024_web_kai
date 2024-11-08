@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>組合選擇器</title>
+    <style>
+        /* 子代選擇器(下一層) */
+        div>p {
+            /* background-color: yellow; */
+            font-size: 32px;
+        }
+
+        /* 後代選擇器 (全) 少用 */
+        div p {
+            /* background-color: skyblue; */
+            font-size: 32px;
+        }
+
+        /* 相鄰兄弟選擇器 */
+        div+p {
+            font-size: 32px;
+            background-color: aqua;
+        }
+
+        /* 兄弟選擇器 */
+        div~p {
+            /* background-color: gold; */
+            font-size: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>p0 Lorem ipsum dolor sit amet.</p>
+    <div>
+        <p>p1 L orem ipsum dolor sit amet.</p>
+        <p>p2 Lorem ipsum dolor sit amet.</p>
+        <main>
+            <p>p3 Lorem, ipsum dolor.</p>
+        </main>
+    </div>
+    <p>p4 Lorem ipsum dolor sit amet.</p>
+    <p>p5 Lorem ipsum dolor sit amet.</p>
+</body>
+
+</html>

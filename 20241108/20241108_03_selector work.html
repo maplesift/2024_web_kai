@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>組合選擇器三兄弟</title>
+    <style>
+        /* 子代選擇器(下一層) */
+        div {
+            background-color: greenyellow;
+            font-size: 30px;
+        }
+
+        div>div {
+            background-color: yellow;
+            font-size: 32px;
+        }
+
+        /* 後代選擇器 (全) 少用 */
+        div div {
+            background-color: skyblue;
+            font-size: 32px;
+        }
+
+        /* 相鄰兄弟選擇器 */
+        div+p {
+            font-size: 32px;
+            /* background-color: aqua; */
+        }
+
+        /* 兄弟選擇器 */
+        div~div {
+            background-color: gold;
+            font-size: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bae">
+        劉備
+        <div>
+            &nbsp;&nbsp; 劉封
+            <div>
+                &nbsp;&nbsp; &nbsp;&nbsp;劉三刀
+            </div>
+        </div>
+    </div>
+    <!-- <div class="un">
+        關羽
+    </div>
+    <div class="fae">
+        張飛
+    </div> -->
+</body>
+
+</html>
