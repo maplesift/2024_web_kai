@@ -1,3 +1,47 @@
-h1 {
-    color: skyblue;
+* {
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+/* header */
+header {
+    width: 1024px;
+    height: 65px;
+    background-color: skyblue;
+    margin: auto;
+}
+
+/* container */
+.container {
+    display: flex;
+    width: 1024px;
+    /* - 65px ok
+    -65 ng */
+    height: calc(768px - 65px - 20px);
+    background-color: red;
+    margin: auto;
+}
+
+
+/* container-left */
+
+aside {
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+    background-color: yellow;
+}
+
+/* container-right */
+main {
+    width: calc(1024px - 215px);
+    height: calc(768px -65px -20px);
+    background-color: green;
+}
+
+/* footer */
+footer {
+    width: 1024px;
+    height: 20px;
+    background-color: silver;
+    margin: auto;
 }
