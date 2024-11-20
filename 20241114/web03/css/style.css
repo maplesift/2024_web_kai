@@ -11,6 +11,16 @@ header {
     /* background-color: skyblue; */
     margin: auto;
     border: 1px solid black;
+    /* padding: 5px 13px; */
+}
+
+header img {
+    position: absolute;
+    /* top: 0; */
+    right: 0;
+    left: 0;
+    /* bottom: 0; */
+    margin: auto;
 }
 
 /* container */
@@ -33,6 +43,7 @@ aside {
     /* background-color: yellow; */
 
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -50,7 +61,6 @@ aside {
     text-align: center;
     color: #000000;
 
-
 }
 
 .aside-title {
@@ -62,10 +72,12 @@ aside {
 .aside-items {
 
     background-image: url(../images/menu1.png);
+    background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 7%;
     margin: auto;
+
 }
 
 .aside-items:hover {
