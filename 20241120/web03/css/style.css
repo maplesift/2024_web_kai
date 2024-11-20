@@ -65,8 +65,10 @@ aside {
 
 .aside-title {
     font-size: 24px;
-    text-decoration-line: underline;
+    /* text-decoration-line: underline; */
     color: #FF00FF;
+    border-bottom: 1px solid black;
+    padding: 10px;
 }
 
 .aside-items {
@@ -83,6 +85,8 @@ aside {
 .aside-items:hover {
     background-image: url(../images/menu2.png);
 }
+
+
 
 .aside-footer {
     width: 100%;
@@ -108,6 +112,29 @@ main {
     border: 1px solid black;
     border-top: 0;
     border-bottom: 0;
+    font-size: 24px;
+    color: #0000FF;
+}
+
+marquee {
+    height: 29px;
+    width: 770px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-items {
+    margin-top: 20px;
+    background-image: url(../images/menu1.png);
+}
+
+.menu-items:hover {
+    background-image: url(../images/menu2.png);
 }
 
 .main-footer {
