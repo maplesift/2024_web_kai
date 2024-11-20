@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw03</title>
+</head>
+
+<body>
+    <!-- base -->
+    <div class="base">
+        <!-- header -->
+        <header>
+            header
+        </header>
+        <!-- container -->
+        <div class="container">
+            <!-- left -->
+            <aside>
+                <div class="aside-header">
+                    asideheader
+                </div>
+                <div class="aside-footer">
+                    asdfooter
+                </div>
+            </aside>
+            <!-- right -->
+            <main>
+                <div class="main-header">
+                    main-header
+                </div>
+                <div class="main-footer">
+                    main-footer
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            footer
+        </footer>
+    </div>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .base {
+            width: 1024px;
+            height: 768px;
+            background-color: #000000;
+        }
+
+        header {
+            width: 1024px;
+            height: 65px;
+            background-color: aquamarine;
+        }
+
+        .container {
+            width: 1024px;
+            height: calc(768px - 65px - 20px);
+            background-color: gold;
+            display: flex;
+        }
+
+
+        aside {
+            width: 215px;
+            height: calc(768px - 20px - 65px);
+            background-color: silver;
+            /* display: flex;
+            flex-direction: column; */
+        }
+
+        .aside-header {
+            width: 100%;
+            height: calc(100% - 25px);
+            background-color: #1eff00;
+        }
+
+        .aside-footer {
+            width: 100%;
+            height: 25px;
+            background-color: greenyellow;
+        }
+
+        main {
+            width: calc(1024px - 215px);
+            height: calc(768px - 20px - 65px);
+            background-color: #837474;
+        }
+
+        .main-header {
+            width: 100%;
+            height: 29px;
+            background-color: skyblue;
+        }
+
+        .main-footer {
+            width: 100%;
+            height: calc(100% - 29px);
+            /* height: calc(768px - 20px - 65px - 29px); */
+            background-color: rgb(192, 124, 255);
+        }
+
+        /* footer */
+        footer {
+            width: 1024px;
+            height: 20px;
+            background-color: rgb(147, 147, 250);
+        }
+    </style>
+</body>
+
+</html>
