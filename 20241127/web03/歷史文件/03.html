@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- base -->
+    <div class="base">
+        <!-- header -->
+        <header>
+            header
+        </header>
+        <!-- container -->
+        <div class="container">
+            <!-- left -->
+            <main>
+                <div class="main-header">
+                    main-header
+                </div>
+                <div class="main-footer">
+                    main-footer
+                </div>
+            </main>
+
+            <!-- right -->
+            <aside>
+                <div class="aside-header">
+                    asdheader
+                </div>
+                <div class="aside-footer">
+                    asdfooter
+                </div>
+            </aside>
+        </div>
+        <!-- footer -->
+        <footer>
+            footer
+        </footer>
+    </div>
+    <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .base {
+            width: 1024px;
+            height: 768px;
+            background-color: black;
+            margin: auto;
+        }
+
+        /* header */
+        header {
+            width: 1024px;
+            height: 65px;
+            background-color: gold;
+        }
+
+        .container {
+            width: 1024px;
+            height: calc(768px - 65px - 20px);
+            background-color: silver;
+            display: flex;
+        }
+
+        /* left */
+        main {
+            width: 215px;
+            height: 100%;
+            background-color: aquamarine;
+        }
+
+        .main-header {
+            width: 100%;
+            background-color: #ff4b4b;
+            height: calc(100% - 25px);
+        }
+
+        .main-footer {
+            background-color: #ffaa00;
+            width: 100%;
+            height: 25px;
+        }
+
+        /* right */
+        aside {
+            width: calc(1024px - 215px);
+            height: calc(768px - 65px - 20px);
+            background-color: #9d6100;
+        }
+
+        .aside-header {
+            width: 100%;
+            height: 29px;
+            background-color: salmon;
+        }
+
+        .aside-footer {
+            width: 100%;
+            height: calc(100% - 29px);
+            background-color: yellow;
+        }
+
+        /* footer */
+        footer {
+            width: 1024px;
+            height: 20px;
+            background-color: greenyellow;
+        }
+    </style>
+</body>
+
+</html>
