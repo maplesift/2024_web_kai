@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國立科技高中─校園社團介紹網</title>
+</head>
+
+<body>
+    <!-- body -->
+    <div class="body">
+        <!-- header -->
+        <header>
+            header
+        </header>
+        <!-- container -->
+        <div class="container">
+
+            <!-- left -->
+            <nav>
+                <div class="nav-header">
+                    nav-header
+                </div>
+                <div class="nav-footer">
+                    nav-footer
+                </div>
+            </nav>
+            <!-- right -->
+            <main>
+                <div class="main-header">
+                    main-header
+                </div>
+                <div class="main-footer">
+                    main-footer
+                </div>
+            </main>
+        </div>
+        <!-- footer -->
+        <footer>
+            footer
+        </footer>
+    </div>
+    <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+            font-family: '標楷體';
+        }
+
+        .body {
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+            background-color: black;
+
+        }
+
+        header {
+            width: 1024px;
+            height: 65px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+
+        /* 中段 */
+        .container {
+            width: 1024px;
+            height: calc(100% - 65px - 20px);
+            background-color: green;
+            display: flex;
+        }
+
+        nav {
+            width: 215px;
+            height: 100%;
+            background-color: rgb(255, 206, 201);
+        }
+
+        .nav-header {
+            width: 100%;
+            height: calc(100% - 25px);
+            background-color: #a1ffd9;
+            border: 1px solid black;
+            border-top: 0;
+
+        }
+
+        .nav-footer {
+            width: 100%;
+            height: 25px;
+            background-color: rgb(54, 255, 141);
+            border: 1px solid black;
+            border-top: 0;
+
+        }
+
+        main {
+            width: calc(100% - 215px);
+            height: 100%;
+            background-color: black;
+        }
+
+        .main-header {
+            width: 100%;
+            height: 29px;
+            background-color: salmon;
+            border: 1px solid black;
+            border-top: 0;
+            border-left: 0;
+
+        }
+
+        .main-footer {
+            width: 100%;
+            height: calc(100% - 29px);
+            background-color: skyblue;
+            border: 1px solid black;
+            border-top: 0;
+            border-left: 0;
+
+        }
+
+        footer {
+            width: 1024px;
+            height: 20px;
+            background-color: wheat;
+            border: 1px solid black;
+            border-top: 0;
+
+        }
+    </style>
+</body>
+
+</html>
