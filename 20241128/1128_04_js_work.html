@@ -67,7 +67,6 @@
             font-weight: bold;
         }
 
-
         .main-footer-right {
             width: 70%;
             height: 70%;
@@ -93,47 +92,8 @@
             transition: 0.5s;
         }
 
-        .span1 {
-            font-size: 24px;
-
-        }
-
-        .span1-change {
+        .span-change {
             text-decoration: line-through;
-        }
-
-        .span2 {
-            font-size: 24px;
-
-        }
-
-        .span2-change {
-            text-decoration: line-through;
-        }
-
-        .span3 {
-            font-size: 24px;
-
-        }
-
-        .span3-change {
-            text-decoration: line-through;
-        }
-
-        .bg-blue {
-            background-color: blue;
-        }
-
-        .bg-red {
-            background-color: red;
-        }
-
-        .bg-green {
-            background-color: green;
-        }
-
-        button {
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -150,7 +110,7 @@
                 <!-- 左 -->
                 <div class="main-footer-left">
                     起司炸雞<br>
-                    <span id="span1" class="span1">原價349元</span>
+                    <span id="span1">原價349元</span>
                 </div>
                 <!-- 右 -->
                 <div id="box1" class="main-footer-right">
@@ -196,10 +156,6 @@
         </div>
     </header>
 
-
-
-
-
     <script>
         // function
         // 1.綁定 bind
@@ -222,12 +178,13 @@
             count++
             console.log(`點擊次數:${count}`)
         })
+
         // ================box1
         // mouseenter 滑鼠滑到出現事件
         box1.addEventListener('mouseenter', function () {
             console.log('box click ok');
             box1.setAttribute('class', 'main-footer-right-change');
-            span1.setAttribute('class', 'span1-change')
+            span1.setAttribute('class', 'span-change')
             count++
             console.log(`次數:${count}`)
         })
@@ -235,16 +192,17 @@
         box1.addEventListener('mouseleave', function () {
             console.log('box click ok');
             box1.setAttribute('class', 'main-footer-right');
-            span1.setAttribute('class', 'span1')
+            span1.setAttribute('class', 'span')
             count++
             console.log(`次數:${count}`)
         })
+
         // ===============box2
         // mouseenter 滑鼠滑到出現事件
         box2.addEventListener('mouseenter', function () {
             console.log('box click ok');
             box2.setAttribute('class', 'main-footer-right-change');
-            span2.setAttribute('class', 'span2-change')
+            span2.setAttribute('class', 'span-change')
             count++
             console.log(`次數:${count}`)
         })
@@ -252,17 +210,17 @@
         box2.addEventListener('mouseleave', function () {
             console.log('box click ok');
             box2.setAttribute('class', 'main-footer-right');
-            span2.setAttribute('class', 'span2')
-
+            span2.setAttribute('class', 'span')
             count++
             console.log(`次數:${count}`)
         })
+
         // ================box3
         // mouseenter 滑鼠滑到出現事件
         box3.addEventListener('mouseenter', function () {
             console.log('box click ok');
             box3.setAttribute('class', 'main-footer-right-change');
-            span3.setAttribute('class', 'span3-change')
+            span3.setAttribute('class', 'span-change')
             count++
             console.log(`次數:${count}`)
         })
@@ -270,12 +228,10 @@
         box3.addEventListener('mouseleave', function () {
             console.log('box click ok');
             box3.setAttribute('class', 'main-footer-right');
-            span3.setAttribute('class', 'span3')
-
+            span3.setAttribute('class', 'span')
             count++
             console.log(`次數:${count}`)
         })
-
 
     </script>
 
