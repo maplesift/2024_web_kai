@@ -23,6 +23,10 @@
         .bg-green {
             background-color: green;
         }
+
+        button {
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -31,19 +35,34 @@
     <div id="box" class="bg-blue">
 
     </div>
-
+    <button onclick="boxFun()">green</button>
+    <button onclick="boxFun2()">red</button>
 
 
     <script>
+        // 1.div onclick -> js function
+        function boxFun() {
+            console.log('hello green');
+            box.setAttribute("class", "bg-green");
+        }
+        function boxFun2() {
+            console.log('hello red');
+            box.setAttribute("class", "bg-red");
+        }
         let box = document.getElementById('box');
+        console.log(`box=${box}`)
         // css
         // box.style.backgroundColor = "blue";
 
         // class
         // box.classList.add("bg-red");
-        // attr
-        box.setAttribute("class", "bg-red");
-        box.setAttribute("class", "bg-green");
+
+        // attr =>屬性
+        // box.setAttribute("class", "bg-red");
+        // box.setAttribute("class", "bg-green");
+
+        // event 事件
+
     </script>
 
 </body>
