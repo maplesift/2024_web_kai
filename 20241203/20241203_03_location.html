@@ -17,6 +17,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
     <script>
+        function toUrl($url) {
+            window.location.href = $url
+        }
         $(document).ready(function () {
             // bind
             const myBtn = $('#myBtn');
@@ -26,8 +29,15 @@
             myBtn.click(function () {
                 console.log('btn ok')
                 let getScreenWidth = window.screen.width;
+                // js轉址
+                // href
+                // window.location.href = 'https://www.w3schools.com/';
+                // replace;method 不能返回上一頁
+                // window.location.replace('https://www.w3schools.com/')
                 console.log('getScreenWidth', getScreenWidth);
-
+                // toUrl function
+                let url = 'https://www.w3schools.com/';
+                toUrl(url);
             })
 
         })
