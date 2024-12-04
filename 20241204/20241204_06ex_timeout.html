@@ -77,9 +77,22 @@
             const box2Span = $('#box2Span');
             const box3Span = $('#box3Span');
             const box4Span = $('#box4Span');
+            // timer
+            let myInterval;
+            let count = 0;
+
+            // for 1 -> 10  sec:1
+            let timer = setInterval(function () {
+                count++;
+                console.log(count);
+                if (count >= 10) {
+                    clearInterval(timer);
+                }
+            }, 1000)
 
             // 2.action
             myBtn2.click(function (e) {
+                clearInterval(myInterval);
                 console.log('myBtn ok');
                 // 1.get text
                 let textval = text.val();
@@ -96,9 +109,10 @@
 
                 // });
                 // 無限
-                setInterval(function () {
-                    console.log(`my text is ${textval}`);
-                    box4Span.text(textval);
+                myInterval = setInterval(function () {
+                    count++
+                    console.log(`my text is ${textval} - ${count}`);
+                    box4Span.text(`${textval} - ${count}`);
                     box3Span.text(textval);
 
                     setTimeout(function () {
