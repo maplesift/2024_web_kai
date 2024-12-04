@@ -36,33 +36,7 @@
 <body>
     <div class="container">
         <div class="box">
-            <p>
-                <input type="number" name="" id="num1">
-            </p>
-
-            <p>
-                <input type="number" name="" id="num2">
-            </p>
-
-            <p>
-                <input type="text" name="" id="opt">
-            </p>
-
-            <p>
-                <button type="button" id="myBtn">myBtn</button>
-            </p>
-            <p>
-                <span id="box1Span"></span>
-            </p>
-        </div>
-        <div class="box">
-            sum = ?
-            <p>
-                <span id="box2Span"></span>
-            </p>
-        </div>
-        <div class="box">
-            sum x 10 = ?
+            say ?
             <p>
                 <span id="box3Span"></span>
             </p>
@@ -92,35 +66,6 @@
     <script>
         $(document).ready(function () {
 
-            /*
-            * sumFun 加總
-            * num1 number 第一個數字
-            * num2 number 第二個數字
-            * return sum 加總
-            */
-            // function sumFun(num1, num2) {
-            //     let sum = num1 + num2;
-            //     console.log('sum', sum);
-            //     return sum;
-            // }
-
-            function delaytime(textval, time1val) {
-                setTimeout(function () {
-                    box4Span.text(textval);
-                }, time1val)
-            }
-
-
-            // function x10Fun(sum) {
-            //     return sum * 10;
-            // }
-
-            // function showResult(num1Value, num2Value, optValue, sum, x10Result) {
-            //     box1Span.text(`${num1Value} ${optValue} ${num2Value} = ${sum}`);
-            //     box2Span.text(`${num1Value} ${optValue} ${num2Value} = ${sum}`);
-            //     box3Span.text(x10Result);
-            // }
-
             // 1. bind
             const num1 = $('#num1');
             const num2 = $('#num2');
@@ -136,16 +81,14 @@
             // 2.action
             myBtn2.click(function (e) {
                 console.log('myBtn ok');
-                // get text
+                // 1.get text
                 let textval = text.val();
                 // console.log(textval);
 
-                // get time
+                // 2.get time
                 let time1val = Number(time1.val());
                 // console.log(time1val);
                 // console.log(typeof (time1val));
-                // show text
-                // box4Span.text(textval)
                 // 一次
                 //     setTimeout(function () {
                 //         box4Span.text(textval);
