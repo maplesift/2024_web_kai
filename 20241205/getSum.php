@@ -5,7 +5,7 @@ $input = $_GET;
 $num1 = $input['num1'];
 $num2 = $input['num2'];
 
-$sum = $num1 / $num2;
+$sum = $num1 + $num2;
 
 
 $data = [
