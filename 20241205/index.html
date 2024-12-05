@@ -47,12 +47,14 @@
                     dataType: "json",
                     success: function (response) {
                         console.log('response', response);
-                        console.log('response.s1', response.s1);
+                        console.log('response.name', response.name);
+                        console.log('response.number', response.number);
+                        console.log('response.text', response.text);
                         // 懶人包:呼叫下列三種
                         // obj['s1']
                         // obj.s1
                         // obj->s1
-                        myH1.html(`姓名:${response.s1} <br> 電話:${response.s2}<br> 吃了${response.s3}`);
+                        myH1.html(`姓名:${response.name} <br> 電話:${response.number}<br> 吃了${response.text}`);
                     }
                 });
 
