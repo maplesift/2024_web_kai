@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p>If you click on the "Hide" button, I will disappear.</p>
+
+    <button id="hide">slideUp</button>
+    <button id="show">slideDown</button>
+    <button id="toggle">slideToggle</button>
+
+    <div id="box">
+        <img src="https://picsum.photos/id/20/1920/1080" alt="" srcset="">
+    </div>
+
+    <!-- <div id="box"></div> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // bind
+        const hide = $("#hide");
+        const show = $("#show");
+        const box = $("#box");
+        const toggle = $("#toggle");
+
+        // action
+        box.hide();
+        box.fadeIn(3000);
+        hide.click(function () {
+            box.slideUp();
+        });
+        show.click(function () {
+            box.slideDown(300);
+        });
+        toggle.click(function () {
+            box.slideToggle(1000);
+        });
+
+
+    </script>
+</body>
+
+</html>
