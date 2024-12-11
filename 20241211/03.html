@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_addEvent</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            /* overflow: hidden; */
+            font-size: 21px;
+
+        }
+
+        .text-red {
+            color: red;
+            font-size: 30px;
+        }
+
+        #bg {
+
+            background-image: url(https://bbqchicken.com.tw/images/index/info_title.svg );
+            background-repeat: no-repeat;
+            background-size: 250px, 250px;
+            background-attachment: fixed;
+            background-position: 4% 93%;
+            background-color: rgb(238, 250, 255);
+        }
+
+
+
+        header {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: space-around;
+        }
+
+
+        .box {
+            width: 30%;
+            height: 75vh;
+            /* background-color: skyblue; */
+
+        }
+
+
+        main {
+            width: 100%;
+            height: 70%;
+            /* background-color: salmon; */
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .main-footer {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .main-footer-left {
+            width: 70%;
+            height: 70%;
+            /* background-color: white; */
+            text-align: center;
+            font-size: 24px;
+            padding-top: 10px;
+            font-weight: bold;
+        }
+
+
+        .main-footer-right {
+            width: 70%;
+            height: 70%;
+            /* background-color: silver; */
+            text-align: center;
+            font-size: 24px;
+            /* color: red; */
+            font-weight: bold;
+            padding-top: 20px;
+            /* opacity: 0; */
+        }
+
+        .main-footer-right-change {
+            width: 70%;
+            height: 70%;
+            /* background-color: silver; */
+            text-align: center;
+            font-size: 32px;
+            /* color: red; */
+            font-weight: bold;
+            padding-top: 20px;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .span1 {
+            font-size: 24px;
+
+        }
+
+        .span1-change {
+            text-decoration: line-through;
+        }
+
+        .span2 {
+            font-size: 24px;
+
+        }
+
+        .span2-change {
+            text-decoration: line-through;
+        }
+
+        .span3 {
+            font-size: 24px;
+
+        }
+
+        .span3-change {
+            text-decoration: line-through;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-green {
+            background-color: green;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        .cent {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body id="bg">
+    <header>
+        <!-- box1 -->
+        <div class=" box">
+            <main>
+                <img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e8%b5%b7%e5%8f%b8%e5%8d%8a%e9%9b%9e.png">
+            </main>
+            <div class="main-footer">
+                <!-- 左 -->
+                <div class="main-footer-left">
+                    起司炸雞<br>
+                    <span id="span1" class="priceClass" data-price="349">原價349元</span>
+                </div>
+                <!-- 右 -->
+                <div id="box1" class="main-footer-right">
+                    <input class="inputClass" type="number" name="" value="0" max="10" min="0">
+                </div>
+                <div class="totalClass">
+
+                </div>
+            </div>
+        </div>
+        <!-- box2 -->
+        <div class=" box">
+            <main>
+                <img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e8%be%a3%e5%91%b3%e7%87%92%e8%82%89%e9%a2%a8%e5%91%b3.png">
+            </main>
+            <div class="main-footer">
+                <!-- 左 -->
+                <div class="main-footer-left">
+                    辣味燒肉風味炸雞<br>
+                    <span class="priceClass" data-price="349">原價349元</span>
+                </div>
+                <!-- 右 -->
+                <div id="box2" class="main-footer-right">
+                    <input class="inputClass" type="number" name="" value="0" max="10" min="0">
+                </div>
+                <div class="totalClass">
+
+                </div>
+            </div>
+        </div>
+        <!-- box3 -->
+        <div class=" box">
+            <main>
+                <img
+                    src="https://bbqchicken.com.tw/images/maintain/menu/%e7%b6%93%e5%85%b8%e7%82%b8%e9%9b%9e/%e9%9f%93%e5%bc%8f%e6%96%99%e7%90%86%e5%ba%97-%e9%9f%93%e5%bc%8f%e7%94%98%e9%86%ac%e5%8d%8a%e9%9b%9e.png">
+            </main>
+            <div class="main-footer">
+                <!-- 左 -->
+                <div class="main-footer-left">
+                    韓式甘醬炸雞<br>
+                    <span class="priceClass" data-price="349">原價349元</span>
+                </div>
+                <!-- 右 -->
+                <div id="box3" class="main-footer-right">
+
+                    <input class="inputClass" type="number" name="" value="0" max="10" min="0">
+                </div>
+                <div class="totalClass">
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <h1 id="sumResult"></h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        // function
+        // function
+        // get all Result => sum
+        $(document).ready(function () {
+            function getSum() {
+
+                let sum = 0;
+                totalClass.each(function (index, element) {
+                    console.log('index', index);
+                    // console.log('element', element);
+                    // console.log('this', this);
+
+                    let getTotalValue = Number($(this).text());
+                    sum = sum + getTotalValue;
+                    console.log('getTotalValue', getTotalValue);
+                    // console.log('sum', typeof (sum));
+
+                });
+
+                // 重構
+                if (sum >= 1000) {
+                    sum = sum * 0.75;
+                    sumResult.attr('class', 'text-red');
+                    let resultString = `特價${sum} 元`;
+                    sumResult.text(resultString);
+
+                } else {
+                    sumResult.attr('class', '');
+                    let resultString = `${sum} 元`;
+                    sumResult.text(resultString);
+                }
+                // let resultString = `${sum} 元`;
+                // sumResult.text(resultString);
+            }
+            // 1.綁定 bind
+            const priceClass = $('.priceClass')
+            const inputClass = $('.inputClass')
+            const totalClass = $('.totalClass')
+            const sumResult = $('#sumResult')
+            // console.log('priceClass', priceClass);
+            // console.log('inputClass', inputClass);
+            // console.log('totalClass', totalClass);
+            // console.log('sumResult', sumResult);
+
+            let sum = 0;
+
+            // 2.事件 action
+            $.each(inputClass, function (indexInArray, valueOfElement) {
+                $(this).change(function (e) {
+                    console.log('change ok');
+                    // now ?
+                    // console.log('now $(this)', $(this));
+
+                    // parent() 到了 div class="main-footer"
+                    myParent = $(this).parent().parent();
+                    // console.log('myParent', myParent);
+
+                    // find() .class
+                    myPrice = myParent.find('.priceClass').attr('data-price');
+                    console.log('myPrice', myPrice);
+
+                    myTotal = myParent.find('.totalClass');
+                    // console.log('myTotal', myTotal);
+                    let getPriceValue = Number(myPrice);
+                    let getInputValue = Number($(this).val());
+                    let result = getPriceValue * getInputValue;
+                    console.log('getPriceValue', getPriceValue);
+                    console.log('getInputValue', getInputValue);
+                    console.log('result', result);
+                    myTotal.text(result);
+
+                    getSum();
+                })
+
+            })
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
