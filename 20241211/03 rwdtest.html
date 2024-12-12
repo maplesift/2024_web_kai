@@ -156,7 +156,7 @@
             <div class="main-footer">
                 <!-- 左 -->
                 <div class="main-footer-left">
-                    辣味燒肉風味炸雞<br>
+                    辣味燒肉炸雞<br>
                     <span class="priceClass" data-price="349"></span>
                 </div>
                 <!-- 右 -->
@@ -198,6 +198,7 @@
     <br><br><br><br><br><br><br><br><br>
     <hr>
     <h1 id="sumResult" class="cent">0</h1>
+    <br><br><br><br><br><br><br><br><br> <br><br><br><br><br>
 
 
 
@@ -225,7 +226,7 @@
 
                 // 重構
                 if (sum >= 1000) {
-                    sum = sum * 0.75;
+                    Math.floor(sum * 0.75);
                     sumResult.attr('class', 'text-red cent');
                     let resultString = `特價${sum} 元`;
                     sumResult.text(resultString);
