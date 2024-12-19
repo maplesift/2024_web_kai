@@ -15,12 +15,30 @@
       display: flex;
       align-items: center;
     }
+
+    .box2 {
+      width: 300px;
+      height: 300px;
+      background-color: salmon;
+      border: 1px solid red;
+      border-radius: 100%;
+    }
+
+
+
+    .cas {
+      border-radius: 100% !important;
+      width: 12px !important;
+      height: 12px !important;
+      margin-right: 5px !important;
+    }
   </style>
 </head>
 
 <body>
+  <div class="box2"></div>
 
-  <div class="container-fluid">
+  <div class="container-fluid cas">
     <div class="row">
       <div class="col">
         <!-- Carousel -->
@@ -73,11 +91,11 @@
         <div id="demo2" class="carousel slide" data-bs-ride="carousel">
 
           <!-- Indicators/dots -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo2" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo2" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#demo2" data-bs-slide-to="3"></button>
+          <div class="carousel-indicators  ">
+            <button type="button" class="active cas" data-bs-target="#demo2" data-bs-slide-to="0"></button>
+            <button type="button" class="cas" data-bs-target="#demo2" data-bs-slide-to="1"></button>
+            <button type="button" class="cas" data-bs-target="#demo2" data-bs-slide-to="2"></button>
+            <button type="button" class="cas" data-bs-target="#demo2" data-bs-slide-to="3"></button>
           </div>
 
           <!-- The slideshow/carousel -->
@@ -97,12 +115,12 @@
           </div>
 
           <!-- Left and right controls/ico -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bg-red"></span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
-          </button>
+          </button> -->
         </div>
       </div>
       <div class="col-4">
