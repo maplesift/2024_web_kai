@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex:work</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .link2 {
+            display: none;
+        }
+
+        .link3 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2>Stacked form</h2>
+        <form action="/action_page.php">
+            <div class="mb-3 mt-3">
+                <div class=" row">
+                    <!-- id -->
+                    <div class="col">
+                        <label for="ID" class="fs-5">帳號:</label>
+                        <input type="text" class="form-control " id="ID" placeholder="ID" name="ID">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <!-- 密碼 -->
+                    <div class="col">
+                        <label for="pwd" class="fs-5">密碼:</label>
+                        <input type="password" class="form-control link1" id="pwd" placeholder="Enter password"
+                            name="pswd">
+                    </div>
+                </div>
+                <!-- 生日 -->
+                <div class="link2 row mt-3">
+                    <div class="col">
+                        <label for="birthday" class="fs-5">生日:</label>
+                        <input type="text" class="form-control" id="birthday" placeholder="YYYY_MM_DD" name="birthday">
+                    </div>
+
+                </div>
+                <!-- 性別 -->
+                <div class="link2 row mt-3">
+                    <div class="col">
+                        <label for="sex" class="fs-5">性別:</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1"
+                                checked>
+                            <label class="form-check-label" for="radio1">男</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+                            <label class="form-check-label" for="radio2">女</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- number -->
+                <div class=" row mt-3">
+                    <div class="col link2">
+                        <label for="birthday" class="fs-5">喜歡的數字:</label>
+                        <input type="number" class="form-control link2" id="number" placeholder="7" name="number">
+                    </div>
+                </div>
+                <!-- 興趣 -->
+                <div class="link3 row mt-3">
+                    <div class="col">
+                        <label class="fs-5">興趣是:</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something"
+                                checked>
+                            <label class="form-check-label" for="check1">美食</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check2" name="option2"
+                                value="something">
+                            <label class="form-check-label" for="check2">睡覺</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check3" name="option3"
+                                value="something">
+                            <label class="form-check-label" for="check3">旅行</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check4" name="option4"
+                                value="something">
+                            <label class="form-check-label" for="check4">電影</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check5" name="option5"
+                                value="something">
+                            <label class="form-check-label" for="check5">遊戲</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check6" name="option6"
+                                value="something">
+                            <label class="form-check-label" for="check6">音樂</label>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <hr>
+                <div class="link3 form-check mb-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> 記住我
+                    </label>
+                </div>
+
+                <button type="submit" class="link3 btn btn-primary container">Submit</button>
+
+
+        </form>
+    </div>
+
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // bind
+            // const link1 = $('.link1');
+            // const link2 = $('.link2');
+            // const link3 = $('.link3');
+            // action
+
+            $(document).ready(function () {
+                // 監聽 .link 的 blur 事件
+                $('.link1').on('blur', function () {
+                    $('.link2').show(500); // 顯示 link2
+                });
+                $('.link2').on('blur', function () {
+                    $('.link3').show(500); // 顯示 link3
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
