@@ -59,10 +59,16 @@
         }
 
         .dc {
-            color: white;
-            border-radius: 30%;
-            background-color: blue;
+            color: rgb(0, 30, 255);
+            /* border-radius: 100%; */
+            /* background-color: blue; */
+            /* width: 50px !important; */
+            /* height: 50px !important; */
+        }
 
+        /* font-size: 14px !important; */
+        .fs-dc {
+            font-size: calc(2.375rem + 3.5vw) !important;
         }
 
         .cas {
@@ -82,6 +88,34 @@
         .margin-right-icon {
             margin-right: 10px;
         }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            /* 初始透明 */
+            visibility: hidden;
+            /* 初始不可見 */
+            transform: translateY(50px);
+            /* 初始位置往下移 */
+            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+            /* 過渡效果 */
+        }
+
+        #back-to-top:hover {
+            background-color: #0056b3;
+        }
+
+
 
         /* .height {
             height: 50px;
@@ -224,11 +258,13 @@
                 <i class="bi bi-twitch fs-1 text-murasaki margin-right-icon"></i>
                 <i class="bi bi-twitter-x fs-1 text-dark margin-right-icon"></i>
                 <i class="bi bi-github fs-1 text-dark margin-right-icon"></i>
-                <i class="bi bi-discord fs-1 dc margin-right-icon"></i>
+                <i class="bi bi-discord  dc fs-1 margin-right-icon"></i>
 
             </div>
         </div>
     </div>
+    <a href="#top" id="back-to-top"><i class="bi bi-arrow-90deg-up fs-5"></i></a>
+
     <!-- js include 順序 1.bs 2.jq 3.self -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
         integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
@@ -238,6 +274,26 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backToTop = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercent = (scrollTop / windowHeight) * 100;
+
+                if (scrollPercent > 10) {
+                    backToTop.style.opacity = '1'; // 設為完全不透明
+                    backToTop.style.visibility = 'visible'; // 顯示按鈕
+                    backToTop.style.transform = 'translateY(0)'; // 回到原始位置
+                } else {
+                    backToTop.style.opacity = '0'; // 設為完全透明
+                    backToTop.style.visibility = 'hidden'; // 隱藏按鈕
+                    backToTop.style.transform = 'translateY(50px)'; // 下移回初始位置
+                }
+            });
+        });
+
         $(document).ready(function () {
 
 
