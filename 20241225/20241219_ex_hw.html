@@ -11,222 +11,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="../test.ico" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="css.css">
     <style>
-        /* ==================================隨意上色 */
-        .box1 {
-            width: 500px;
-            height: 500px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-        }
 
-        .box2 {
-            width: 300px;
-            height: 300px;
-            background-color: salmon;
-            border: 1px solid red;
-            /* border-radius: 100%; */
-        }
-
-        .text-murasaki {
-            color: rebeccapurple;
-            /* margin: 12px; */
-        }
-
-        .bg-red {
-            background-color: red;
-            /* margin: 12px; */
-        }
-
-        .bg-yellow {
-            background-color: yellow;
-            /* margin: 12px; */
-        }
-
-        .bg-skyblue {
-            background-color: skyblue;
-            /* margin: 12px; */
-        }
-
-        .bg-hotpink {
-            background-color: hotpink;
-            /* margin: 12px; */
-        }
-
-        .bg-lawngreen {
-            background-color: lawngreen;
-            /* margin: 12px; */
-        }
-
-        /* ==================nav */
-        /* .nav-w {
-            opacity: 0.9;
-        } */
-
-        /* ===================旋轉木馬底下按鈕:圓圈 */
-        .carousel {
-            position: relative;
-            /* 為容器設定相對定位 */
-        }
-
-        .carousel-indicators {
-            position: absolute;
-            /* 絕對定位，相對於父容器 */
-            bottom: -50px;
-            /* 始終位於圖片下方 */
-            left: 37%;
-            /* 水平居中 */
-            transform: translateX(-50%);
-            /* 修正居中位置 */
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            /* 調整按鈕間距 */
-        }
-
-        .carousel-indicators .cas {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #0062ff;
-            /* 指示器顏色 */
-            margin: 0;
-        }
-
-        .carousel-indicators .cas:hover {
-            background-color: blue;
-        }
-
-        .carousel-inner img {
-            display: block;
-            width: 100%;
-            /* 圖片全寬 */
-            height: auto;
-            /* 高度自適應 */
-        }
-
-
-        /* ============================================================= */
-
-
-        /* =========================右下回到頂端箭頭=========================== */
-        #back-to-top {
-
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 14px !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            /* 初始透明 */
-            visibility: hidden;
-            /* 初始不可見 */
-            transform: translateY(50px);
-            /* 初始位置往下移 */
-            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
-            /* 過渡效果 */
-        }
-
-        #back-to-top:hover {
-            background-color: #0056b3;
-        }
-
-        /* ================================================ */
-        .footer-hight {
-            height: 50vh;
-        }
-
-        /* ==============================================底下icon ==============================================*/
-
-
-        .icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .a-box {
-            width: 50px;
-            height: 50px;
-            text-decoration: none;
-            margin-right: 15px;
-        }
-
-        .dc {
-            color: rgb(0, 30, 255);
-        }
-
-        .a-box>.bi {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            transition: transform 0.3s ease;
-            /* 添加過渡效果 */
-        }
-
-        .a-box>.bi:hover {
-            transform: scale(1.2);
-            /* 使用 scale 從中心放大 */
-        }
-
-
-        /* ===========================文字螢光底線============================= */
-        /* 文字樣式 */
-        .highlight-hover {
-            display: inline-block;
-            position: relative;
-        }
-
-        /* 默認狀態下沒有下劃線 */
-        .highlight-hover::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 8px;
-            /* 螢光筆的粗度 */
-            background-color: rgba(0, 208, 255, 0.8);
-            /* 螢光筆顏色，這裡選用螢光黃 */
-            transition: width 0.3s ease, left 0.3s ease;
-            z-index: -100;
-        }
-
-        /* 滑鼠游標進入時，橫條從中間延伸出來 */
-        .highlight-hover:hover::after {
-            width: 100%;
-            left: 0;
-        }
-
-        /* ==================================== */
-        .h-15 {
-            height: 15%;
-        }
-
-        .vh-25 {
-            height: 25vh;
-        }
-
-        .header-h {
-            height: 7vh;
-        }
-
-        .logo {
-            width: 40px;
-            height: 40px;
-        }
     </style>
 </head>
 
@@ -273,7 +60,7 @@
 
     <!-- container2 -->
     <div id="page"></div>
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="vh-100">
             <div class="row">
                 <div class="col-8 bg-skyblue vh-100">
@@ -291,12 +78,12 @@
 
     <!-- container3 作品 -->
     <div id="hw"></div>
-    <div class="container-fluid ">
+    <div class="container-fluid bg-cas">
         <div class="row">
             <div class="col-6  h-100">
                 <!-- 旋轉木馬 -->
                 <!-- Carousel -->
-                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <div id="demo" class="carousel slide " data-bs-ride="carousel">
 
                     <!-- Indicators/dots -->
                     <div class="carousel-indicators">
@@ -306,7 +93,7 @@
                     </div>
 
                     <!-- The slideshow/carousel -->
-                    <div class="carousel-inner">
+                    <div class="carousel-inner rounded-5">
                         <div class="carousel-item active">
                             <img src="../001.jpg" alt="Los Angeles" class="d-block  img-fluid">
                         </div>
@@ -327,7 +114,7 @@
                     </button>
                 </div>
             </div>
-            <!-- col end -->
+            <!-- col top -->
             <div class="col-6 h-100">
                 作品一覽
             </div>
@@ -335,7 +122,7 @@
     </div>
     <div id="footer" class="container-fluid footer-hight">
         <div class="row h-25 align-items-center">
-            <div class="col text-center">
+            <div class="col text-center fs-2">
                 聯絡我
             </div>
         </div>
@@ -360,16 +147,15 @@
 
                 </a>
                 <!-- <i class="bi bi-facebook fs-1 text-primary"></i> -->
-                <a href="https://github.com/maplesift" class="a-box">
+                <a href="https://github.com/maplesift" class="a-box" target="_blank">
                     <i class="bi bi-github fs-1 text-dark"></i>
                 </a>
 
             </div>
         </div>
-        <footer class="row text-center ">
-            <div class="col">
+        <footer class="row text-center  copyright">
+            <div class="col ">
                 Copyright © 2024 maplesift All rights reserved.
-
             </div>
         </footer>
     </div>
@@ -405,8 +191,6 @@
         });
 
         $(document).ready(function () {
-
-
 
         });
     </script>
