@@ -228,7 +228,11 @@
         }
 
         .header-h {
-            height: 5vh;
+            height: 7vh;
+        }
+
+        .container1-vh {
+            height: 70vh;
         }
 
         /* .h-25 {
