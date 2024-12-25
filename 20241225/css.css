@@ -59,10 +59,20 @@
             /* opacity: 0.8; */
         }
 
+        /* ========================炸機icon */
+        #bg-icon {
+
+            background-image: url(https://bbqchicken.com.tw/images/index/info_title.svg );
+            background-repeat: no-repeat;
+            background-size: 250px, 250px;
+            background-attachment: fixed;
+            background-position: 4% 93%;
+            background-color: rgb(255, 255, 255);
+            z-index: 100;
+        }
+
         /* ==================nav */
-        /* .nav-w {
-            opacity: 0.9;
-        } */
+
 
         /* ===================旋轉木馬底下按鈕:圓圈 */
         .carousel {
