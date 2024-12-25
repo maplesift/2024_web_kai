@@ -20,6 +20,10 @@
             /* border-radius: 100%; */
         }
 
+        .box3 {
+            height: 73vh;
+        }
+
         .text-murasaki {
             color: rebeccapurple;
             /* margin: 12px; */
@@ -214,8 +218,12 @@
         }
 
         .header-h {
-            height: 7vh;
+            height: 5vh;
         }
+
+        /* .h-25 {
+            height: 25%;
+        } */
 
         .logo {
             width: 40px;
