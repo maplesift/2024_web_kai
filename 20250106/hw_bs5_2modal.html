@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .bi-file-earmark-plus:hover {
+            font-size: 1px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container mt-3">
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-4">
+
+                <!-- table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>姓名</th>
+                            <th colspan="2" class="text-center">編輯</th>
+                            <th></th>
+                            <th>
+                                <!-- <i class="bi bi-file-earmark-plus fs-3 text-success"></i> -->
+                                <button type="button" class="btn  bi bi-file-earmark-plus fs-3 text-success"
+                                    data-bs-toggle="modal" data-bs-target="#myModal3" id="create">
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td id="1">Doe</td>
+                            <td>
+                                <!-- 修改 -->
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                    修改
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#myModal2">
+                                    刪除
+                                </button>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td id="2">Moe</td>
+                            <!-- 修改 -->
+                            <td>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                    修改
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#myModal2">
+                                    刪除
+                                </button>
+                            </td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td id="3">Dooley</td>
+                            <!-- 修改 -->
+                            <td>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                    修改
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#myModal2">
+                                    刪除
+                                </button>
+                            </td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4">
+                <div class="container mt-3">
+                </div>
+
+                <!-- The Modal 編輯-->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title"></h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                編輯:<input type="text" name="" id="">
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">確定修改</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">返回頁面</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Modal 刪除 -->
+                <div class="modal" id="myModal2">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">
+
+                                </h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body text-danger">
+                                確定要刪除資料嗎?
+                            </div>
+
+                            <!-- Modal footer -->
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">確定刪除</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">返回頁面</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- modal 新增 -->
+                <div class="modal" id="myModal3">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">新增</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                請輸入姓名
+                                <input type="text" name="" id="create_name">
+                            </div>
+
+                            <!-- Modal footer -->
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal">確定</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">返回頁面</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+
+
+        });
+    </script>
+</body>
+
+</html>
