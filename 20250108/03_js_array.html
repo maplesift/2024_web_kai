@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_array</title>
+</head>
+
+<body>
+
+
+    <script>
+        let myArr = [1, 2, 3, 4, 5];
+        let myArrx2 = myArr.map(x => x * 2);
+        let newArr = [];
+        let sum = 0;
+        myArr.forEach(function (value) {
+            sum += value;
+        });
+        console.log(sum);
+
+        // myArrx2.push(myArr)
+
+
+        // console.log(myArrx2);
+
+        // console.log(myArr);
+        myArr.forEach(function (value) {
+            // console.log(value);
+            let tmp = value * 2
+            myArr.push(tmp);
+            // console.log(tmp);
+        });
+        myArr.forEach(function (value) {
+            if (value > 3) {
+                newArr.push(value);
+
+            }
+        });
+        // console.log(newArr);
+
+
+        // jqery method
+        // $.each(collection, function (index, value) {
+
+        // })
+        // jqery method
+
+
+    </script>
+</body>
+
+</html>
