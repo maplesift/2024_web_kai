@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .box1 {
+
+            margin: auto;
+            width: 80%;
+            height: 50vh;
+            /* background-color: seagreen; */
+        }
+
+        .box2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background-color: salmon; */
+        }
+
+
+        .container-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box3 {
+            display: block;
+            justify-items: center;
+            padding-top: 40px;
+            /* background-color: sienna; */
+
+        }
+
+        .box5 {
+            text-align: right;
+        }
+
+        .img-box {
+            /* background-color: skyblue; */
+            height: 130px;
+            /* width: 200px; */
+            /* justify-items: center; */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>球大賽</h1>
+        <hr>
+    </div>
+    <div class="container box1">
+        <div class="row h-100">
+            <div class="col-2  img-box ">
+                <img src="../icon/123.jpg" alt="" class="img-fluid mt-3">
+            </div>
+            <div class="col-8 box2 ">
+                <div class="fs-2 ">
+                    倒數
+                    <br>
+                    <span id="timer">60</span>
+                </div>
+                <div class="fs-2 box5">
+                    最高分數
+                    <br>
+                    <span class="fs-2" id="highScore">157</span>
+                </div>
+            </div>
+            <div class="col-2">
+                <img src="../icon/321.jpg" alt="" class="img-fluid mt-3">
+            </div>
+
+            <div class="box3">
+                <div class="fs-2">
+
+                    分數
+                </div>
+
+                <span class="fs-1" id="nowScore">
+                    168
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-1"></div>
+            <div class="col-2 mt-5">
+                <button id="startBtn" class="btn btn-info fs-2">開始</button>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2 mt-5">
+                <button id="shootBtn" class="btn btn-info fs-2">投球</button>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2 mt-5">
+                <button id="resetBtn" class="btn btn-danger fs-2">重置</button>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // 
+            const timer = $('#timer');
+            const highScore = $('#highScore');
+            const nowScore = $('#nowScore');
+            const startBtn = $('#startBtn');
+            const shootBtn = $('#shootBtn');
+            const resetBtn = $('#resetBtn');
+
+            let scoreVar = 0;
+            let scorehighVar = 0;
+            let timeVar = 3;
+            nowScore.text(scoreVar);
+            highScore.text(scorehighVar);
+            timer.text(timeVar);
+            // action
+            startBtn.click(function (e) {
+                console.log('startBtn');
+
+            })
+            shootBtn.click(function (e) {
+                console.log('shootBtn');
+                // 亂數 1-9
+                scoreVar += Math.floor(Math.random() * 9);
+                nowScore.text(scoreVar);
+
+            })
+            resetBtn.click(function (e) {
+                console.log('resetBtn');
+
+            })
+        });
+    </script>
+</body>
+
+</html>

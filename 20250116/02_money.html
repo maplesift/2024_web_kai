@@ -24,6 +24,12 @@
     <div class="container mt-3">
 
         <table class="table table-bordered" id="myTable">
+            <h2>複利計算 每年投10萬 利率1.08</h2>
+            <label for="">本金</label>
+            <input type="text" id="originInput" value="">
+            <label for="">利率</label>
+            <input type="text" id="rateInput" value="">
+            <button id="mybtn" class="btn btn-info">計算</button>
             <thead>
                 <tr>
                     <th>年份</th>
@@ -46,6 +52,7 @@
 
 </body>
 <script>
+
 
     let originMoney = 10;
     let rate = 1.08;
