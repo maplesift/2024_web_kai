@@ -53,6 +53,15 @@
             height: 130px;
             /* width: 200px; */
             /* justify-items: center; */
+            position: relative;
+        }
+
+        .baseball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50px;
+            display: none;
         }
     </style>
 </head>
@@ -66,6 +75,7 @@
         <div class="row h-100">
             <div class="col-3  img-box ">
                 <img src="../icon/321.jpg" alt="" class="img-fluid mt-3">
+                <img src="../icon/pngwing.com.png" class="baseball img-fluid" id="baseball" alt="">
             </div>
             <div class="col-6 box2 ">
                 <div class="fs-2 ">
@@ -135,6 +145,7 @@
             const shootBtn = $('#shootBtn');
             const resetBtn = $('#resetBtn');
             const mathSpan = $('#mathSpan');
+            const baseball = $('#baseball');
 
             let scoreVar = 0;
             let scorehighVar = 0;
