@@ -68,16 +68,46 @@
             bottom: 61px;
             /* display: none; */
         }
+
+        /* 文字樣式 */
+        .highlight-hover {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* 默認狀態下沒有下劃線 */
+        .highlight-hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 5px;
+            /* 螢光筆的粗度 */
+            background-color: rgb(253, 164, 164);
+            /* 螢光筆顏色，這裡選用螢光黃 */
+            transition: width 0.3s ease, left 0.3s ease;
+            z-index: -100;
+        }
+
+        /* 滑鼠游標進入時，橫條從中間延伸出來 */
+        .highlight-hover:hover::after {
+            width: 100%;
+            left: 0;
+        }
     </style>
 </head>
 
 <body>
-    <!-- <div class="bg"> -->
-
-
     <div class="container text-center mt-3">
         <h1>野球大賽</h1>
-        <a href="./02_ball noLimit.html">投球無限制版</a>
+        <a href="./02_ball noLimit.html" class="highlight-hover">投球無限制版</a>
+        <!-- <div class="container mt-3">
+            <input type="text" name="form-control" id="changeTime" placeholder="修改時間">
+            <button type="button" id="myBtn" class="btn btn-primary">修改</button>
+        </div> -->
         <hr>
     </div>
     <div class="container box1">
@@ -88,7 +118,7 @@
             </div>
             <div class="col-6 box2 ">
                 <div class="fs-2 ">
-                    倒數
+                    時間
                     <br>
                     <span id="timer">60</span>
                 </div>
@@ -101,10 +131,8 @@
             <div class="col-3">
                 <img src="../icon/123.jpg" alt="" class="img-fluid mt-3">
             </div>
-
             <div class="box3">
                 <div class="fs-2">
-
                     分數
                 </div>
 
@@ -113,7 +141,7 @@
                 </span>
             </div>
         </div>
-        <!-- </div> -->
+
         <div class="container">
             <div class="row text-center">
                 <div class="col-1"></div>
@@ -159,6 +187,8 @@
             const mathSpan = $('#mathSpan');
             const baseball = $('#baseball');
             const clearHighScore = $('#clearHighScore');
+            const changeTime = $('#changeTime');
+            const myBtn = $('#myBtn');
 
             let isAnimating = false; // 動畫進行中標記
 
@@ -281,6 +311,9 @@
                 highScore.text(scoreHighVar);
 
             });
+            myBtn.click(function (e) {
+
+            })
         });
         const baseball = document.getElementById('baseball');
         const imgBox = document.querySelector('.img-box');
