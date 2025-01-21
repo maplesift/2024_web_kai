@@ -9,14 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
-
     <style>
         body {
             background-color: #f4fdff;
-
         }
-
 
         .box1 {
 
@@ -72,12 +68,9 @@
 </head>
 
 <body>
-    <!-- <div class="bg"> -->
-
-
     <div class="container text-center mt-3">
-        <h1>野球大賽</h1>
-        <a href="./02_ball noLimit.html">投球無限制版</a>
+        <h1>野球大賽(投球無限制版)</h1>
+        <a href="./02_ball.html">回原版</a>
         <hr>
     </div>
     <div class="container box1">
@@ -113,27 +106,27 @@
                 </span>
             </div>
         </div>
-        <!-- </div> -->
-        <div class="container">
-            <div class="row text-center">
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-1"></div>
+            <div class="col-2 mt-5">
+                <button id="startBtn" class="btn btn-info fs-2">開始</button>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2 mt-5">
+                <button id="shootBtn" class="btn btn-info fs-2">投球</button>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2 mt-5">
+                <button id="resetBtn" class="btn btn-danger fs-2">重置</button>
                 <div class="col-1"></div>
-                <div class="col-2 mt-5">
-                    <button id="startBtn" class="btn btn-info fs-2">開始</button>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-2 mt-5">
-                    <button id="shootBtn" class="btn btn-info fs-2">投球</button>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-2 mt-5">
-                    <button id="resetBtn" class="btn btn-danger fs-2">重置</button>
-                    <div class="col-1"></div>
-                </div>
             </div>
         </div>
-        <div class="container text-center fs-1 mt-5">投中:<span id="mathSpan">0</span>分 </div>
-
     </div>
+    <div class="container text-center fs-1 mt-5">投中:<span id="mathSpan">0</span>分 </div>
+
+
 
 
     <!-- js include 順序 1.bs 2.jq 3.self -->
@@ -144,9 +137,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- sweetalert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
-
     <script>
         $(document).ready(function () {
             // 
@@ -200,11 +190,6 @@
                         clearInterval(myInterval);
                         startBtn.show(500);
                         shootBtn.hide(500);
-                        Swal.fire({
-                            icon: 'warning',
-                            title: '時間到囉',
-                            text: '請按重置鍵再來一場!',
-                        })
                     } else {
                         timer.text(tmpTime);
                     }
@@ -215,19 +200,19 @@
                 }
             })
             shootBtn.click(function (e) {
-                if (isAnimating) {
-                    console.log('動畫尚未結束，按鈕無效');
-                    return; // 如果動畫進行中，直接返回
-                }
+                // if (isAnimating) {
+                //     console.log('動畫尚未結束，按鈕無效');
+                //     return; // 如果動畫進行中，直接返回
+                // }
 
-                isAnimating = true; // 標記動畫開始
+                // isAnimating = true; // 標記動畫開始
                 throwBaseball(); // 執行動畫
 
-                // 模擬動畫結束的事件（假設動畫時間是 2~3 秒）
-                setTimeout(() => {
-                    isAnimating = false; // 標記動畫結束
-                    console.log('動畫結束，按鈕可再次點擊');
-                }, 1000); // 動畫時間後解鎖按鈕
+                // // 模擬動畫結束的事件（假設動畫時間是 2~3 秒）
+                // setTimeout(() => {
+                //     isAnimating = false; // 標記動畫結束
+                //     console.log('動畫結束，按鈕可再次點擊');
+                // }, 1000); // 動畫時間後解鎖按鈕
 
                 if (gameFlag == false) {
                     console.log('gameFlag false', gameFlag);
@@ -288,13 +273,13 @@
 
         function throwBaseball() {
             // 隨機參數
-            const randomDuration = 100 + Math.random() * 1000; // 動畫持續時間 (0.1~1.1秒)
+            const randomDuration = + Math.random() * 700; // 動畫持續時間 (0.1~1.1秒)
             const randomXOffset = Math.random() * 250 - 25; // X 軸隨機偏移 (-25px ~ 25px)
             const randomYOffset = Math.random() * 220 - 25; // Y 軸上下微調 (-10px ~ 10px)
 
             // 啟動動畫
             baseball.style.transition = `transform ${randomDuration}ms ease-out`;
-            baseball.style.transform = `translate(${imgBoxWidth + 650 + randomXOffset}px, ${randomYOffset}px)`; // 終點位置
+            baseball.style.transform = `translate(${imgBoxWidth + 700 + randomXOffset}px, ${randomYOffset}px)`; // 終點位置
 
 
             // 重置位置（延遲後重新投球）

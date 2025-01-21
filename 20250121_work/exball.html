@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球飛過去</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #f0f8ff;
+        }
+
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+
+    <script>
+        const ball = document.querySelector('.ball');
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        function animateBall() {
+            let startTime = null;
+            const duration = 1000; // 5秒
+            const startX = -50;
+            const endX = screenWidth + 50;
+
+            function randomY() {
+                return Math.random() * screenHeight * 1.1; // Y軸隨機範圍
+            }
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+
+                // 計算 X 軸位置
+                const progress = Math.min(elapsed / duration, 1);
+                const currentX = startX + (endX - startX) * progress;
+
+                // 計算隨機 Y 軸
+                const currentY = randomY();
+
+                // 更新球的位置
+                ball.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    // 重置動畫
+                    setTimeout(() => {
+                        startTime = null;
+                        requestAnimationFrame(step);
+                    }, 500); // 延遲 0.5 秒重新開始
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        animateBall();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模擬投手丟棒球</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #87CEEB;
+            /* 天空藍 */
+        }
+
+        .ball {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+
+    <script>
+        const ball = document.querySelector('.ball');
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        function throwBall() {
+            // 初始位置和隨機參數
+            const startX = -50; // 起始 X 軸（左邊畫面外）
+            const startY = screenHeight / 2; // 起始 Y 軸（畫面中間）
+            const endX = screenWidth + 50; // 終點 X 軸（右邊畫面外）
+            const randomYChange = Math.random() * 200 - 100; // Y 軸隨機變化 (-100 ~ 100)
+
+            const duration = 300 + Math.random() * 500; // 隨機速度 (2秒 ~ 3秒)
+
+            // 設定動畫的開始時間
+            let startTime = null;
+
+            // 動畫函式
+            function animate(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+
+                // 計算進度
+                const progress = Math.min(elapsed / duration, 1);
+
+                // X 軸線性移動
+                const currentX = startX + (endX - startX) * progress;
+
+                // Y 軸投球軌跡 (加一點隨機曲線)
+                const currentY = startY + randomYChange * Math.sin(progress * Math.PI);
+
+                // 更新球的位置
+                ball.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+                // 如果進度還沒完成，繼續動畫
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    // 動畫結束後延遲一段時間，再重新丟球
+                    setTimeout(throwBall, 1000); // 延遲 1 秒
+                }
+            }
+
+            // 啟動動畫
+            requestAnimationFrame(animate);
+        }
+
+        // 開始模擬投球
+        throwBall();
+    </script>
+</body>
+
+</html>

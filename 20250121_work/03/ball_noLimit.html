@@ -14,9 +14,7 @@
     <style>
         body {
             background-color: #f4fdff;
-
         }
-
 
         .box1 {
 
@@ -68,23 +66,49 @@
             bottom: 61px;
             /* display: none; */
         }
+
+        /* 文字樣式 */
+        .highlight-hover {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* 默認狀態下沒有下劃線 */
+        .highlight-hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 5px;
+            /* 螢光筆的粗度 */
+            background-color: rgb(253, 164, 164);
+            /* 螢光筆顏色，這裡選用螢光黃 */
+            transition: width 0.3s ease, left 0.3s ease;
+            z-index: -100;
+        }
+
+        /* 滑鼠游標進入時，橫條從中間延伸出來 */
+        .highlight-hover:hover::after {
+            width: 100%;
+            left: 0;
+        }
     </style>
 </head>
 
 <body>
-    <!-- <div class="bg"> -->
-
-
     <div class="container text-center mt-3">
-        <h1>野球大賽</h1>
-        <a href="./02_ball noLimit.html">投球無限制版</a>
+        <h1>野球大賽(投球無限制版)</h1>
+        <a href="./index.html" class="highlight-hover">回原版</a>
         <hr>
     </div>
     <div class="container box1">
         <div class="row h-100">
             <div class="col-3  img-box ">
-                <img src="../icon/321.jpg" alt="" class="img-fluid mt-3">
-                <img src="../icon/pngwing.com.png" class="baseball img-fluid" id="baseball" alt="">
+                <img src="./321.jpg" alt="" class="img-fluid mt-3">
+                <img src="./pngwing.com.png" class="baseball img-fluid" id="baseball" alt="">
             </div>
             <div class="col-6 box2 ">
                 <div class="fs-2 ">
@@ -99,7 +123,7 @@
                 </div>
             </div>
             <div class="col-3">
-                <img src="../icon/123.jpg" alt="" class="img-fluid mt-3">
+                <img src="./123.jpg" alt="" class="img-fluid mt-3">
             </div>
 
             <div class="box3">
@@ -113,27 +137,27 @@
                 </span>
             </div>
         </div>
-        <!-- </div> -->
-        <div class="container">
-            <div class="row text-center">
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-1"></div>
+            <div class="col-2 mt-5">
+                <button id="startBtn" class="btn btn-info fs-2">開始</button>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2 mt-5">
+                <button id="shootBtn" class="btn btn-info fs-2">投球</button>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2 mt-5">
+                <button id="resetBtn" class="btn btn-danger fs-2">重置</button>
                 <div class="col-1"></div>
-                <div class="col-2 mt-5">
-                    <button id="startBtn" class="btn btn-info fs-2">開始</button>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-2 mt-5">
-                    <button id="shootBtn" class="btn btn-info fs-2">投球</button>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-2 mt-5">
-                    <button id="resetBtn" class="btn btn-danger fs-2">重置</button>
-                    <div class="col-1"></div>
-                </div>
             </div>
         </div>
-        <div class="container text-center fs-1 mt-5">投中:<span id="mathSpan">0</span>分 </div>
-
     </div>
+    <div class="container text-center fs-1 mt-5">投中:<span id="mathSpan">0</span>分 </div>
+
+
 
 
     <!-- js include 順序 1.bs 2.jq 3.self -->
@@ -215,19 +239,19 @@
                 }
             })
             shootBtn.click(function (e) {
-                if (isAnimating) {
-                    console.log('動畫尚未結束，按鈕無效');
-                    return; // 如果動畫進行中，直接返回
-                }
+                // if (isAnimating) {
+                //     console.log('動畫尚未結束，按鈕無效');
+                //     return; // 如果動畫進行中，直接返回
+                // }
 
-                isAnimating = true; // 標記動畫開始
+                // isAnimating = true; // 標記動畫開始
                 throwBaseball(); // 執行動畫
 
-                // 模擬動畫結束的事件（假設動畫時間是 2~3 秒）
-                setTimeout(() => {
-                    isAnimating = false; // 標記動畫結束
-                    console.log('動畫結束，按鈕可再次點擊');
-                }, 1000); // 動畫時間後解鎖按鈕
+                // // 模擬動畫結束的事件（假設動畫時間是 2~3 秒）
+                // setTimeout(() => {
+                //     isAnimating = false; // 標記動畫結束
+                //     console.log('動畫結束，按鈕可再次點擊');
+                // }, 1000); // 動畫時間後解鎖按鈕
 
                 if (gameFlag == false) {
                     console.log('gameFlag false', gameFlag);
@@ -288,13 +312,13 @@
 
         function throwBaseball() {
             // 隨機參數
-            const randomDuration = 100 + Math.random() * 1000; // 動畫持續時間 (0.1~1.1秒)
+            const randomDuration = + Math.random() * 700; // 動畫持續時間 (0.1~1.1秒)
             const randomXOffset = Math.random() * 250 - 25; // X 軸隨機偏移 (-25px ~ 25px)
             const randomYOffset = Math.random() * 220 - 25; // Y 軸上下微調 (-10px ~ 10px)
 
             // 啟動動畫
             baseball.style.transition = `transform ${randomDuration}ms ease-out`;
-            baseball.style.transform = `translate(${imgBoxWidth + 650 + randomXOffset}px, ${randomYOffset}px)`; // 終點位置
+            baseball.style.transform = `translate(${imgBoxWidth + 700 + randomXOffset}px, ${randomYOffset}px)`; // 終點位置
 
 
             // 重置位置（延遲後重新投球）

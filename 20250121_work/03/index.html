@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+
 
     <style>
         body {
@@ -68,6 +70,35 @@
             bottom: 61px;
             /* display: none; */
         }
+
+        /* 文字樣式 */
+        .highlight-hover {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* 默認狀態下沒有下劃線 */
+        .highlight-hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 5px;
+            /* 螢光筆的粗度 */
+            background-color: rgb(253, 164, 164);
+            /* 螢光筆顏色，這裡選用螢光黃 */
+            transition: width 0.3s ease, left 0.3s ease;
+            z-index: -100;
+        }
+
+        /* 滑鼠游標進入時，橫條從中間延伸出來 */
+        .highlight-hover:hover::after {
+            width: 100%;
+            left: 0;
+        }
     </style>
 </head>
 
@@ -77,14 +108,14 @@
 
     <div class="container text-center mt-3">
         <h1>野球大賽</h1>
-        <a href="./02_ball noLimit.html">投球無限制版</a>
+        <a href="./ball_noLimit.html" class="highlight-hover">投球無限制版</a>
         <hr>
     </div>
     <div class="container box1">
         <div class="row h-100">
             <div class="col-3  img-box ">
-                <img src="../icon/321.jpg" alt="" class="img-fluid mt-3">
-                <img src="../icon/pngwing.com.png" class="baseball img-fluid" id="baseball" alt="">
+                <img src="./321.jpg" alt="" class="img-fluid mt-3">
+                <img src="./pngwing.com.png" class="baseball img-fluid" id="baseball" alt="">
             </div>
             <div class="col-6 box2 ">
                 <div class="fs-2 ">
@@ -99,7 +130,7 @@
                 </div>
             </div>
             <div class="col-3">
-                <img src="../icon/123.jpg" alt="" class="img-fluid mt-3">
+                <img src="./123.jpg" alt="" class="img-fluid mt-3">
             </div>
 
             <div class="box3">
