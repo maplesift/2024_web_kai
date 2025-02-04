@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>串api </title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        tr:nth-child(odd) {
+            background-color: skyblue;
+        }
+
+        #weather td:hover {
+            background-color: rgb(215, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>溫度</th>
+                    <th>舒適度</th>
+                    <th>降雨機率</th>
+                    <th>時間</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Moe</td>
+
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>Dooley</td>
+                </tr> -->
+            </tbody>
+        </table>
+
+
+
+        <!-- js include 順序 1.bs 2.jq 3.self -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+            integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../key/pw.js"></script>
+        <script>
+            $(document).ready(function () {
+                const myTable = $('#myTable');
+                const myTbody = myTable.find('tbody');
+                let url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${pwd}`
+                $.ajax({
+                    type: "get",
+                    url: url,
+                    // data: "data",
+                    dataType: "Json",
+                    success: function (res) {
+                        console.log('res', res);
+                        let data12 = res.records.location[12].locationName;
+                        let data1 = res.records.location[1];
+                        let data = res.records.location;
+                        // console.log('台東', data12);
+                        // console.log('新北', data1);
+                        console.log(data);
+
+                        $.each(data, function (key, value) {
+                            // id
+                            // console.log('value', value);
+                            // 縣市名
+                            let locationName = value.locationName
+                            // console.log('locationName', locationName);
+                            // mint
+                            let mint = value.weatherElement[2].time[1].parameter.parameterName
+                            // console.log('parameter', value.weatherElement[2].time[1].parameter.parameterName);
+                            // maxt
+                            let maxt = value.weatherElement[4].time[1].parameter.parameterName
+                            // console.log('parameter', value.weatherElement[4].time[1].parameter);
+                            // 舒適度
+                            let ci = value.weatherElement[3].time[1].parameter.parameterName;
+                            // 降雨機率
+                            let pop = value.weatherElement[1].time[1].parameter.parameterName;
+                            // 時間
+                            let startTime = value.weatherElement[0].time[1].startTime
+                            let endTime = value.weatherElement[0].time[1].endTime
+                            // console.log(startTime, 'startTime');
+                            // console.log(endTime, 'endTime');
+
+                            let tmp =
+                                `
+                                    <tr id=weather>
+                                        <td>${value.locationName}</td>
+                                        <td>${mint}°c-${maxt}°c </td>
+                                        <td>${ci}</td>
+                                        <td>${pop}%</td>
+                                        <td>${startTime} - ${endTime} </td>
+
+                                    </tr>
+                                `;
+                            myTbody.append(tmp);
+                        })
+
+                    }
+                })
+
+            });
+        </script>
+</body>
+
+</html>
