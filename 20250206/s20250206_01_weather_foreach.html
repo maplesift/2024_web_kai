@@ -44,7 +44,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <!-- <img src="./day/1.svg" alt=""> -->
     <script src="../key/pw.js"></script>
     <script>
         $(document).ready(function () {
@@ -92,6 +92,11 @@
                         let tmpMaxTtime0 = tmpWeatherElement[4].time[0].parameter['parameterName'];
                         let tmpMaxTtime1 = tmpWeatherElement[4].time[1].parameter['parameterName'];
                         let tmpMaxTtime2 = tmpWeatherElement[4].time[2].parameter['parameterName'];
+                        // wx
+
+                        let tmpWx0 = tmpWeatherElement[0].time[0].parameter['parameterValue'];
+                        let tmpWx1 = tmpWeatherElement[0].time[1].parameter['parameterValue'];
+                        let tmpWx2 = tmpWeatherElement[0].time[2].parameter['parameterValue'];
 
                         // console.log('tmpMinTtime0', tmpMinTtime0);
                         // console.log('tmpMinTtime1', tmpMinTtime1);
@@ -115,9 +120,9 @@
                             <tr>
                                 <td>${tmpLocationID + 1}</td>
                                 <td>${tmpLocationName}</td>
-                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c</td>
-                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c</td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c</td>
+                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c <img src="./day/${tmpWx0}.svg" alt=""> </td>
+                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c <img src="./day/${tmpWx1}.svg" alt=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c <img src="./day/${tmpWx2}.svg" alt=""></td>
                             </tr>
                         `;
 
