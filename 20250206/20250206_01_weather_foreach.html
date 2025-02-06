@@ -21,9 +21,9 @@
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th id="time0">time0</th>
-                    <th id="time1">time1</th>
-                    <th id="time2">time2</th>
+                    <th id="th-time1">time1</th>
+                    <th id="th-time2">time2</th>
+                    <th id="th-time3">time3</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,7 +54,10 @@
             const myTable = $('#myTable');
             const myTbody = myTable.find('tbody');
             console.log('myTbody', myTbody);
-
+            const thTime1 = $('#th-time1');
+            const thTime2 = $('#th-time2');
+            const thTime3 = $('#th-time3');
+            console.log('myTbody', myTbody);
 
             // 2.action
 
@@ -69,11 +72,71 @@
                     let data = res.records.location[3].locationName;
                     data = res.records.location;
                     console.log('data', data);
-
                     let time0 = data[0].weatherElement[0].time[0].startTime
                     let time1 = data[0].weatherElement[0].time[1].startTime
                     let time2 = data[0].weatherElement[0].time[2].startTime
                     console.log(time0);
+
+                    // day
+                    let day = '';
+                    // 字串分割===
+
+                    // time1
+                    let startTime1 = data[0].weatherElement[2].time[0].startTime;
+                    let endTime1 = data[0].weatherElement[2].time[0].endTime;
+                    // console.log('startTime1', startTime1);
+                    // console.log('endTime1', endTime1);
+                    // 2025-02-04 06:00:00
+                    let tmpDate = startTime1.substr(0, 10);
+                    let tmpStartText = startTime1.substr(11, 2);
+                    let tmpEndText = endTime1.substr(11, 2);
+                    // console.log('tmpDate', tmpDate);
+                    // console.log('tmpStartText', tmpStartText);
+                    // console.log('tmpEndText', tmpEndText);
+
+                    let textTime1 = `${tmpDate} [${tmpStartText} - ${tmpEndText}]`;
+                    console.log('textTime1', textTime1);
+                    thTime1.text(textTime1);
+
+                    // time2
+                    let startTime2 = data[0].weatherElement[2].time[1].startTime;
+                    let endTime2 = data[0].weatherElement[2].time[1].endTime;
+                    // 2025-02-04 06:00:00
+                    tmpDate = startTime2.substr(0, 10);
+                    tmpStartText = startTime2.substr(11, 2);
+                    tmpEndText = endTime2.substr(11, 2);
+                    // console.log('tmpDate', tmpDate);
+                    // console.log('tmpStartText', tmpStartText);
+                    // console.log('tmpEndText', tmpEndText);
+
+                    let textTime2 = `${tmpDate} [${tmpStartText} - ${tmpEndText}]`;
+                    // console.log('textTime2', textTime2);
+                    thTime2.text(textTime2);
+
+                    // time3
+                    let startTime3 = data[0].weatherElement[2].time[2].startTime;
+                    let endTime3 = data[0].weatherElement[2].time[2].endTime;
+                    // 2025-02-04 06:00:00
+                    tmpDate = startTime3.substr(0, 10);
+                    tmpStartText = startTime3.substr(11, 2);
+                    tmpEndText = endTime3.substr(11, 2);
+                    // console.log('tmpDate', tmpDate);
+                    // console.log('tmpStartText', tmpStartText);
+                    // console.log('tmpEndText', tmpEndText);
+
+                    let textTime3 = `${tmpDate} [${tmpStartText} - ${tmpEndText}]`;
+                    // console.log('textTime3', textTime3);
+                    thTime3.text(textTime3);
+
+                    if (tmpStartText >= 18 || tmpStartText < 6) {
+                        day = 'night'
+                        console.log(day, 'day');
+                    } else {
+                        day = 'day'
+                        console.log(day, 'day');
+                    }
+
+
 
                     // let time1 = tmpWeatherElement[2].time[1]
                     // let time2 = tmpWeatherElement[2].time[2]
@@ -116,13 +179,15 @@
                         // console.log('tmpLocationName', tmpLocationName);
 
                         // 2.table
+                        // 晚上
+
                         let temText = `
                             <tr>
                                 <td>${tmpLocationID + 1}</td>
                                 <td>${tmpLocationName}</td>
-                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c <img src="./day/${tmpWx0}.svg" alt=""> </td>
-                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c <img src="./day/${tmpWx1}.svg" alt=""></td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c <img src="./day/${tmpWx2}.svg" alt=""></td>
+                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c <img src="./${day}/${tmpWx0}.svg" alt=""></td>
+                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c <img src="./${day}/${tmpWx1}.svg" alt=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c <img src="./${day}/${tmpWx2}.svg" alt=""></td>
                             </tr>
                         `;
 
