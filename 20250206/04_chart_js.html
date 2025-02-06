@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- dataTables  -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+
+</head>
+
+<body>
+    <div class="container-fliud">
+        <div class="row">
+            <div class="col">
+
+                <div>
+                    <canvas id="radarChart"></canvas>
+
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <canvas id="radarChart1"></canvas>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <!-- bs5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <!-- chart.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- dataTables -->
+    <script src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"> </script>
+    <script>
+        // const ctx = document.getElementById('radarChart').getContext('2d');
+        const ctx = document.getElementById('radarChart');
+        const ctx1 = document.getElementById('radarChart1');
+
+        const data = {
+            labels: ['力量', '速度', '耐力', '技巧', '敏捷', '爆發力'],
+            datasets: [{
+                label: '選手 A',
+                data: [80, 90, 70, 85, 75, 95],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2
+            }, {
+                label: '選手 B',
+                data: [60, 75, 80, 70, 85, 90],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2
+            }]
+        };
+
+        const radarChart = new Chart(ctx, {
+            type: 'radar',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        const data1 = {
+            labels: ['力量', '速度', '耐力', '技巧', '敏捷', '爆發力'],
+            datasets: [{
+                label: '選手 A',
+                data: [80, 90, 70, 85, 55, 95],
+                backgroundColor: 'rgba(154, 162, 235, 0.2)',
+                borderColor: 'rgba(255, 162, 235, 1)',
+                borderWidth: 2
+            }, {
+                label: '選手 B',
+                data: [60, 75, 80, 70, 85, 90],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2
+            }]
+        };
+
+        const radarChart1 = new Chart(ctx1, {
+            type: 'radar',
+            data: data1,
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
