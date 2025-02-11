@@ -19,67 +19,78 @@
 </head>
 
 <body>
-    <div class="container mt-3">
-        <table class="table table-bordered" id="myTable">
-            <thead>
-                <tr>
-                    <th>time</th>
-                    <th>open</th>
-                    <th>high</th>
-                    <th>low</th>
-                    <th>close</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2011/6/27</td>
-                    <td>57.5</td>
-                    <td>59.8</td>
-                    <td>57.2</td>
-                    <td>59.7</td>
-                </tr>
+    <div class="container-fliud mt-3">
+        <div class="row">
+            <div class="col-7">
 
-            </tbody>
-        </table>
+                <table class="table table-bordered" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>time</th>
+                            <th>open</th>
+                            <th>high</th>
+                            <th>low</th>
+                            <th>close</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2011/6/27</td>
+                            <td>57.5</td>
+                            <td>59.8</td>
+                            <td>57.2</td>
+                            <td>59.7</td>
+                        </tr>
 
-    <!-- js include 順序 1.bs 2.jq 3.self -->
-    <!-- bs5 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
-        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-        </script>
-    <!-- chart.js  -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- dataTables -->
-    <script src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"> </script>
-    <!-- sweetalert2  -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-5">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
 
-<!-- <img src="./data/converted_file.json" alt=""> -->
-    <script>
-        $(document).ready(function () {
-            // 1.bind
-            const myTable = $('#myTable');
-            const myTbody = myTable.find('tbody');
-            // data
-            let url = './data/stock/s0050.json';
-            $.ajax({
-                type: "get",
-                url: url,
-                // data: "data",
-                dataType: "json",
-                success: function (res) {
-                    let data = res;
-                    console.log('res', res);
+        <!-- js include 順序 1.bs 2.jq 3.self -->
+        <!-- bs5 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+            integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+            </script>
+        <!-- chart.js  -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-                    // foreach
-                    $.each(data, function (key, value) {
-                        console.log('time', value.time);
-                        let tmpText = `
+        <!-- dataTables -->
+        <script src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"> </script>
+        <!-- sweetalert2  -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
+        <!-- <img src="./data/converted_file.json" alt=""> -->
+        <script>
+            $(document).ready(function () {
+                // 1.bind
+                const myTable = $('#myTable');
+                const myTbody = myTable.find('tbody');
+                // data
+                let url = './data/stock/s0050.json';
+                $.ajax({
+                    type: "get",
+                    url: url,
+                    // data: "data",
+                    dataType: "json",
+                    success: function (res) {
+                        let data = res;
+                        console.log('res', res);
+
+                        // foreach
+                        $.each(data, function (key, value) {
+                            console.log('time', value.time);
+                            let tmpText = `
                             <tr>
                                 <td>${value.time}</td>
                                 <td>${value.open}</td>
@@ -88,43 +99,63 @@
                                 <td>${value.close}</td>
                             </tr>
                         `;
-                        myTbody.append(tmpText);
-                    });
-                    
-                    myTable.DataTable({
-                        language: {
-                            "lengthMenu": "顯示 _MENU_ 筆資料",
-                            "sProcessing": "處理中...",
-                            "sZeroRecords": "没有匹配结果",
-                            "sInfo": "目前有 _MAX_ 筆資料",
-                            "sInfoEmpty": "目前共有 0 筆紀錄",
-                            "sInfoFiltered": " ",
-                            "sInfoPostFix": "",
-                            "sSearch": "搜尋:",
-                            "sUrl": "",
-                            "sEmptyTable": "尚未有資料紀錄存在",
-                            "sLoadingRecords": "載入資料中...",
-                            "sInfoThousands": ",",
-                            "oPaginate": {
-                                "sFirst": "首頁",
-                                "sPrevious": "上一頁",
-                                "sNext": "下一頁",
-                                "sLast": "末頁"
-                            },
-                            "order": [
-                                [0, "desc"]
-                            ],
-                            "oAria": {
-                                "sSortAscending": ": 以升序排列此列",
-                                "sSortDescending": ": 以降序排列此列"
-                            }
-                        },
+                            myTbody.append(tmpText);
+                        });
 
-                    });
+                        myTable.DataTable({
+                            language: {
+                                "lengthMenu": "顯示 _MENU_ 筆資料",
+                                "sProcessing": "處理中...",
+                                "sZeroRecords": "没有匹配结果",
+                                "sInfo": "目前有 _MAX_ 筆資料",
+                                "sInfoEmpty": "目前共有 0 筆紀錄",
+                                "sInfoFiltered": " ",
+                                "sInfoPostFix": "",
+                                "sSearch": "搜尋:",
+                                "sUrl": "",
+                                "sEmptyTable": "尚未有資料紀錄存在",
+                                "sLoadingRecords": "載入資料中...",
+                                "sInfoThousands": ",",
+                                "oPaginate": {
+                                    "sFirst": "首頁",
+                                    "sPrevious": "上一頁",
+                                    "sNext": "下一頁",
+                                    "sLast": "末頁"
+                                },
+                                "order": [
+                                    [0, "desc"]
+                                ],
+                                "oAria": {
+                                    "sSortAscending": ": 以升序排列此列",
+                                    "sSortDescending": ": 以降序排列此列"
+                                }
+                            },
+
+                        });
+                    }
+                });
+            });
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
                 }
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>

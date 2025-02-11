@@ -58,7 +58,9 @@
                 </table>
             </div>
             <div class="col-5">
-
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
 
@@ -74,7 +76,8 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- dataTables -->
         <script src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"> </script>
-
+        <!-- chart.js  -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="../key/pw.js"></script>
         <script>
             $(document).ready(function () {
@@ -166,6 +169,26 @@
                     }
                 })
 
+            });
+            const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
         </script>
 </body>
