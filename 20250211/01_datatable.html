@@ -19,8 +19,28 @@
 </head>
 
 <body>
+    <div class="container mt-3">
+        <table class="table table-bordered" id="myTable">
+            <thead>
+                <tr>
+                    <th>time</th>
+                    <th>open</th>
+                    <th>high</th>
+                    <th>low</th>
+                    <th>close</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2011/6/27</td>
+                    <td>57.5</td>
+                    <td>59.8</td>
+                    <td>57.2</td>
+                    <td>59.7</td>
+                </tr>
 
-
+            </tbody>
+        </table>
 
     <!-- js include 順序 1.bs 2.jq 3.self -->
     <!-- bs5 -->
@@ -39,23 +59,40 @@
     <!-- sweetalert2  -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
-<img src="./" alt="">
+<!-- <img src="./data/converted_file.json" alt=""> -->
     <script>
         $(document).ready(function () {
+            // 1.bind
             const myTable = $('#myTable');
             const myTbody = myTable.find('tbody');
-            url=""
+            // data
+            let url = './data/stock/s0050.json';
             $.ajax({
                 type: "get",
                 url: url,
                 // data: "data",
-                dataType: "Json",
+                dataType: "json",
                 success: function (res) {
+                    let data = res;
                     console.log('res', res);
+
+                    // foreach
+                    $.each(data, function (key, value) {
+                        console.log('time', value.time);
+                        let tmpText = `
+                            <tr>
+                                <td>${value.time}</td>
+                                <td>${value.open}</td>
+                                <td>${value.high}</td>
+                                <td>${value.low}</td>
+                                <td>${value.close}</td>
+                            </tr>
+                        `;
+                        myTbody.append(tmpText);
+                    });
+
                 }
-            })
-
-
+            });
         });
     </script>
 </body>
